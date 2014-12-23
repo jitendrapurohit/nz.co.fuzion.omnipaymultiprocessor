@@ -121,6 +121,33 @@ return array(
                 'payment_type' => 1,
             ),
     ),
+    5 =>
+        array(
+            'name' => 'OmniPay - Elavon',
+            'entity' => 'payment_processor_type',
+            'params' =>
+                array(
+                    'version' => 3,
+                    'title' => 'OmniPay - Elavon',
+                    'name' => 'omnipay_Elavon',
+                    'description' => 'Omnipay Elavon Payment Processor (offsite)',
+
+                    // DO NOT CHANGE: Labels are used as Omnipay gateway properties.
+                    'user_name_label' => 'ssl_user_id',
+                    'password_label' => 'ssl_pin',
+                    'signature_label' => 'ssl_merchant_id',
+
+                    'class_name' => 'Payment_OmnipayMultiProcessor',
+
+                    'url_site_default' => 'unused',
+                    'url_api_default' => 'unused',
+                    'url_site_test_default' => 'unused',
+                    'url_api_test_default' => 'unused',
+
+                    'billing_mode' => 4,
+                    'payment_type' => 1,
+                ),
+        ),
   /*
   2 =>
     array(

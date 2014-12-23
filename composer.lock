@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ddeb3cbed8881d9f7a6581bdfeb23c5",
+    "hash": "f6ef041cd536ce83c52a1ba27433459d",
     "packages": [
         {
             "name": "alfaproject/omnipay-skrill",
@@ -103,6 +103,48 @@
             "time": "2014-10-29 08:42:24"
         },
         {
+            "name": "fuzion/omnipay-elavon",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eileenmcnaughton/omnipay-elavon.git",
+                "reference": "e58aea6dd46797bb1b403a8cbdcc5e5f5169fdb6"
+            },
+            "require": {
+                "omnipay/common": "~2.0"
+            },
+            "require-dev": {
+                "omnipay/tests": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Omnipay\\Elavon\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eileen McNaughton",
+                    "email": "eileen@fuzion.co.nz"
+                }
+            ],
+            "description": "elavon support for Omnipay payment processing library",
+            "homepage": "https://github.com/eileenmcnaughton/omnipay-elavon",
+            "keywords": [
+                "elavon",
+                "gateway",
+                "merchant",
+                "omnipay",
+                "pay",
+                "payment",
+                "purchase"
+            ],
+            "time": "2014-12-01 11:12:16"
+        },
+        {
             "name": "fuzion/omnipay-paybox",
             "version": "dev-master",
             "source": {
@@ -143,6 +185,48 @@
                 "purchase"
             ],
             "time": "2014-12-09 23:27:58"
+        },
+        {
+            "name": "fuzion/omnipay-shell",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eileenmcnaughton/omnipay-shell.git",
+                "reference": "93e398b0cffea9355a913ee6b7adcd88c05f17b7"
+            },
+            "require": {
+                "omnipay/common": "~2.0"
+            },
+            "require-dev": {
+                "omnipay/tests": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Omnipay\\Shell\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eileen McNaughton",
+                    "email": "eileen@fuzion.co.nz"
+                }
+            ],
+            "description": "shell support for Omnipay payment processing library",
+            "homepage": "https://github.com/eileenmcnaughton/omnipay-shell",
+            "keywords": [
+                "gateway",
+                "merchant",
+                "omnipay",
+                "pay",
+                "payment",
+                "purchase",
+                "shell"
+            ],
+            "time": "2014-12-01 11:13:13"
         },
         {
             "name": "guzzle/common",
@@ -2906,7 +2990,9 @@
         "alfaproject/omnipay-skrill": 20,
         "omnipay/bitpay": 20,
         "fuzion/omnipay-paybox": 20,
-        "sergej-koscejev/omnipay-gopay": 20
+        "sergej-koscejev/omnipay-gopay": 20,
+        "fuzion/omnipay-elavon": 20,
+        "fuzion/omnipay-shell": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

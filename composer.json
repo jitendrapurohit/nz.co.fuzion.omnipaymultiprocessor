@@ -11,6 +11,14 @@
         {
             "type": "git",
             "url":  "https://github.com/sergej-koscejev/omnipay-gopay.git"
+        },
+        {
+            "type": "git",
+            "url":  "https://github.com/eileenmcnaughton/omnipay-elavon.git"
+        },
+        {
+            "type": "git",
+            "url":  "https://github.com/eileenmcnaughton/omnipay-shell.git"
         }
     ],
     "require":
@@ -20,7 +28,9 @@
         "alfaproject/omnipay-skrill": "dev-master",
         "omnipay/bitpay": "dev-master",
         "fuzion/omnipay-paybox": "dev-master",
-        "sergej-koscejev/omnipay-gopay": "dev-master"
+        "sergej-koscejev/omnipay-gopay": "dev-master",
+        "fuzion/omnipay-elavon": "dev-master",
+        "fuzion/omnipay-shell": "dev-master"
     },
     "require-dev":
     {
