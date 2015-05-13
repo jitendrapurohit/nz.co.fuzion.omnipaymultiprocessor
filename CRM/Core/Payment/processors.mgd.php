@@ -162,6 +162,26 @@ return array(
   ),
   /*
 
+  7 =>
+    array(
+      'name' => 'omnipay_SecurePay_DirectPost',
+      'entity' => 'payment_processor_type',
+      'params' =>
+        array(
+          'version' => 3,
+          'title' => 'Omnipay - Securepay',
+          'name' => 'omnipay_SecurePay_DirectPost',
+          'description' => 'Omnipay Securepay',
+          'user_name_label' => 'Merchant Id',
+          'password_label' => 'Transaction Password',
+          'signature_label' => 'unused',
+          'class_name' => 'Payment_OmnipayMultiProcessor',
+          'url_site_default' => 'https://www.paypal.com/',
+          'url_api_default' => '',
+          'billing_mode' => 4,
+          'payment_type' => 1,
+        ),
+    ),
   /*
   2 =>
     array(
