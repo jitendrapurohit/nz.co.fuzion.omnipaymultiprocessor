@@ -1,4 +1,8 @@
 <?php
+
+use Civi\Payment\Exception\PaymentProcessorException;
+use Civi\Payment\System;
+
 /**
  * Payment page class.
  *
@@ -20,8 +24,7 @@ class CRM_Core_Page_PaymentPage extends CRM_Core_Page {
     CRM_Utils_System::setTitle(ts('Enter your payment details'));
     $formData = $this->getTransparentRedirectFormData(CRM_Utils_Request::retrieve('key', 'String', CRM_Core_DAO::$_nullObject, TRUE));
     $paymentProcessorID = $formData['payment_processor_id'];
-    $paymentProcessor = civicrm_api3('payment_processor', 'getsingle', array('id' => $paymentProcessorID));
-    $processor = CRM_Core_Payment::singleton('contribute', $paymentProcessor);
+    $processor = Civi\Payment\System::singleton()->getById($paymentProcessorID);
     $displayFields = $processor->getTransparentDirectDisplayFields();
     foreach ($displayFields as $fieldName => $displayField) {
       if ($displayField['htmlType'] == 'date') {
