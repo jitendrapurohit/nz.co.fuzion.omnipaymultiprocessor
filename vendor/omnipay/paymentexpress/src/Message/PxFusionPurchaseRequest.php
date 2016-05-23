@@ -35,6 +35,26 @@ class PxFusionPurchaseRequest extends AbstractRequest
         return $this->setParameter('password', $value);
     }
 
+    public function getPxPostUsername()
+    {
+        return $this->getParameter('pxPostUsername');
+    }
+
+    public function setPxPostUsername($value)
+    {
+        return $this->setParameter('pxPostUsername', $value);
+    }
+
+    public function getPxPostPassword()
+    {
+        return $this->getParameter('pxPostPassword');
+    }
+
+    public function setPxPostPassword($value)
+    {
+        return $this->setParameter('pxPostPassword', $value);
+    }
+
     public function getTxnRef()
     {
         return $this->getParameter('txnRef');
@@ -47,7 +67,8 @@ class PxFusionPurchaseRequest extends AbstractRequest
 
     public function getData()
     {
-        $this->validate('amount', 'currency', 'txnRef', 'returnUrl');
+
+        $this->validate('amount', 'currency', 'transactionId', 'returnUrl');
 
         $data = new SimpleXMLElement('<GetTransactionId/>');
         $data->addAttribute('xmlns', $this->namespace);
@@ -60,13 +81,13 @@ class PxFusionPurchaseRequest extends AbstractRequest
         $tranDetail->merchantReference = $this->getDescription();
         $tranDetail->returnUrl = $this->getReturnUrl();
         $tranDetail->txnType = $this->action;
-        $tranDetail->txnRef = $this->getTxnRef();
-
+        $tranDetail->txnRef = $this->getTransactionId();
         return $data;
     }
 
     public function sendData($data)
     {
+
         $document = new DOMDocument('1.0', 'utf-8');
 
         $envelope = $document->appendChild(

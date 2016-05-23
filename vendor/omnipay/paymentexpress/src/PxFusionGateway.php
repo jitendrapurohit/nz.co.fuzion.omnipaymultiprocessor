@@ -42,6 +42,27 @@ class PxFusionGateway extends AbstractGateway
         return $this->setParameter('password', $value);
     }
 
+
+    public function getPxPostUsername()
+    {
+        return $this->getParameter('pxPostUsername');
+    }
+
+    public function setPxPostUsername($value)
+    {
+        return $this->setParameter('pxPostUsername', $value);
+    }
+
+    public function getPxPostPassword()
+    {
+        return $this->getParameter('pxPostPassword');
+    }
+
+    public function setPxPostPassword($value)
+    {
+        return $this->setParameter('pxPostPassword', $value);
+    }
+
     public function purchase(array $parameters = array())
     {
         return $this->createRequest('\Omnipay\PaymentExpress\Message\PxFusionPurchaseRequest', $parameters);

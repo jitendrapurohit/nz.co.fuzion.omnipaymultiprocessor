@@ -533,19 +533,10 @@ class CRM_Core_Payment_OmnipayMultiProcessor extends CRM_Core_Payment_PaymentExt
    */
   private function getPaymentFieldMapping() {
     return array(
-      'card_type' => array(
-        'core_field_name' => 'credit_card_type',
-        'options' => array(
-          '' => ts('- select -'),
-          '001' => 'Visa',
-          '002' => 'Mastercard',
-          '003' => 'Amex',
-          '004' => 'Discover',
-        ),
-      ),
-      'card_number' => array('core_field_name' => 'credit_card_number'),
-      'card_expiry_date' => array('core_field_name' => 'credit_card_exp_date'),
-      'card_cvn' => array('core_field_name' => 'cvv2'),
+      'CardNumber' => array('core_field_name' => 'credit_card_number'),
+      'ExpiryMonth' => array('core_field_name' => 'credit_card_expiry_month'),
+      'ExpiryYear' => array('core_field_name' => 'credit_card_expiry_year'),
+      'Cvc2' => array('core_field_name' => 'cvv2'),
     );
   }
 
@@ -587,6 +578,20 @@ class CRM_Core_Payment_OmnipayMultiProcessor extends CRM_Core_Payment_PaymentExt
         'title' => ts('Expiration Date'),
         'cc_field' => TRUE,
         'attributes' => CRM_Core_SelectValues::date('creditCard'),
+        'is_required' => TRUE,
+      ),
+      'credit_card_expiry_month' => array(
+        'htmlType' => 'text',
+        'name' => 'credit_card_expiry_month',
+        'title' => ts('Expiry month'),
+        'cc_field' => TRUE,
+        'is_required' => TRUE,
+      ),
+      'credit_card_expiry_year' => array(
+        'htmlType' => 'text',
+        'name' => 'credit_card_expiry_year',
+        'title' => ts('Expiry year'),
+        'cc_field' => TRUE,
         'is_required' => TRUE,
       ),
       'credit_card_type' => array(

@@ -40,4 +40,10 @@ class PxFusionCompletePurchaseResponse extends AbstractResponse
     {
         return (string) $this->data->dpsTxnRef;
     }
+
+    public function getTransactionId()
+    {
+        print_r($this->data->txnRef);
+       print_r($this->data);die;
+    }
 }

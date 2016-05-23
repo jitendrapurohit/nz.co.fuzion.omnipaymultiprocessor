@@ -36,7 +36,11 @@ class PxFusionPurchaseResponse extends AbstractResponse implements RedirectRespo
         return ((string) $this->data->success === 'true');
     }
 
-    public function getTransactionReference()
+    public function isTransparentRedirect() {
+        return true;
+    }
+
+    public function getSessionId()
     {
         if ($this->isRedirect()) {
             return (string) $this->data->sessionId;
@@ -59,7 +63,7 @@ class PxFusionPurchaseResponse extends AbstractResponse implements RedirectRespo
     {
         if ($this->isRedirect()) {
             return array(
-                'SessionId' => $this->getTransactionReference(),
+                'SessionId' => $this->getSessionId(),
             );
         }
     }
