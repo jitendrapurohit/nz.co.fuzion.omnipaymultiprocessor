@@ -65,6 +65,12 @@ class PxFusionGateway extends AbstractGateway
 
     public function purchase(array $parameters = array())
     {
+        if (!empty($parameters['cardReference']) && $this->getPxPostPassword() && $this->getPxPostUsername()) {
+            $gateway = Omnipay::create('PaymentExpress_PxPost');
+            $gateway->setPassword($this->getPxPostPassword());
+            $gateway->setUserName($this->getPxPostUsername());
+            return $gateway->purchase($parameters);
+        }
         return $this->createRequest('\Omnipay\PaymentExpress\Message\PxFusionPurchaseRequest', $parameters);
     }
 
@@ -72,4 +78,15 @@ class PxFusionGateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\PaymentExpress\Message\PxFusionCompletePurchaseRequest', $parameters);
     }
+
+    public function createCard(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\PaymentExpress\Message\PxFusionCreateCardRequest', $parameters);
+    }
+
+    public function completeCreateCard(array $parameters = array())
+    {
+        return $this->completeAuthorize($parameters);
+    }
+
 }

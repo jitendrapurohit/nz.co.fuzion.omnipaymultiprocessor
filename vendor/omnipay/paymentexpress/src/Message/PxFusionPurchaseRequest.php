@@ -78,7 +78,7 @@ class PxFusionPurchaseRequest extends AbstractRequest
         $tranDetail = $data->addChild('tranDetail');
         $tranDetail->amount = $this->getAmount();
         $tranDetail->currency = $this->getCurrency();
-        $tranDetail->merchantReference = $this->getDescription();
+        $tranDetail->merchantReference = $this->getTransactionId();
         $tranDetail->returnUrl = $this->getReturnUrl();
         $tranDetail->txnType = $this->action;
         $tranDetail->txnRef = $this->getTransactionId();
