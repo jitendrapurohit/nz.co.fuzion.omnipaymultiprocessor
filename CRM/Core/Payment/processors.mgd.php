@@ -377,5 +377,30 @@ return array(
       'is_recur' => 1,
     ),
   ),
+  12 => array(
+    'name' => 'OmniPay - Payment Express PxFusion',
+    'entity' => 'payment_processor_type',
+    'params' => array(
+      'version' => 3,
+      'title' => 'OmniPay - Payment Express PxFusion',
+      'name' => 'omnipay_PaymentExpress_PxFusion',
+      'description' => 'Omnipay Payment Express PxFusion Payment Processor',
+      // DO NOT CHANGE: Labels are used as Omnipay gateway properties.
+      'user_name_label' => 'Username',
+      'password_label' => 'Password',
+      'signature_label' => 'Px Post Username',
+      'subject_label' => 'PxPostPassword',
+      'class_name' => 'Payment_OmnipayMultiProcessor',
+      'url_site_default' => 'http://unused.com',
+      'url_api_default' => 'http://unused.com',
+      'url_recur_default' => 'http://unused.com',
+      'url_site_test_default' => 'http://unused.com',
+      'url_recur_test_default' => 'http://unused.com',
+      'url_api_test_default' => 'http://unused.com',
+      'billing_mode' => 4,
+      'payment_type' => 3,
+      'is_recur' => 1,
+    ),
+  ),
 
 );
