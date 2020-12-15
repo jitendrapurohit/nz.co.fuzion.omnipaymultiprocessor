@@ -119,3 +119,15 @@ function omnipaymultiprocessor_civicrm_preProcess($formName, &$form) {
   }
 
 }
+
+/**
+ * Implements hook_civicrm_check().
+ *
+ * @throws \CiviCRM_API3_Exception
+ */
+function omnipaymultiprocessor_civicrm_check(&$messages) {
+  $omnipayCheck = new CRM_Omnipaymultiprocessor_Check();
+  foreach ($omnipayCheck->checkAll() as $message) {
+    $messages[] = $message;
+  }
+}
